@@ -91,6 +91,8 @@ def resimKirp(canvas):
 	point3 = ((point3[0]+point3[2])/2,(point3[1]+point3[3])/2)
 	global wrapped
 	wrapped = dikdortgeneDonustur([point0,point1,point2,point3])
+	
+	#Converting numpy array into Image
 	b,g,r = cv2.split(wrapped)
 	im = cv2.merge((r,g,b))
 	img = Image.fromarray(im)
@@ -99,7 +101,7 @@ def resimKirp(canvas):
 	canvas.create_image(0,0,anchor = "nw",image = tkimage)
 	canvas.image = tkimage
 	global butonResimKirp
-	butonResimKirp.configure(text = "Resmi Kaydet", command = resimKaydet)
+	butonResimKirp.configure(text = "Save Image", command = resimKaydet)
 def resimAc(canvas,butonKirp):
 	rectList.clear()
 	lineList.clear()
@@ -183,10 +185,10 @@ canvas.tag_bind("r3","<B1-Motion>",hareketEttir)
 canvas.tag_bind("r4","<B1-Motion>",hareketEttir)
 canvas.pack()
 
-butonResimKirp = tk.Button(root,text = "Resmi Kırp",state = "disabled")
+butonResimKirp = tk.Button(root,text = "Crop Image",state = "disabled")
 butonResimKirp.pack()
 
-butonResimAc = tk.Button(root,text = "Resim Seç", command = lambda:resimAc(canvas,butonResimKirp))
+butonResimAc = tk.Button(root,text = "Open Image", command = lambda:resimAc(canvas,butonResimKirp))
 butonResimAc.pack()
 
 root.mainloop()
