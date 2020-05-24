@@ -1,6 +1,6 @@
 ### Irregular Rectangle Image Cropper
 
-In this repository, you can find my code that lets you open and image and select an irregular rectangle area to crop and save the cropped file.
+In this repository, you can find my code that lets you open an image and select an irregular rectangle area to crop and save the cropped file. Cropped area shapes into a regular rectangle (possible rotations and deformations can be observed in cropped image).
 
 Further explanations will be added
 
